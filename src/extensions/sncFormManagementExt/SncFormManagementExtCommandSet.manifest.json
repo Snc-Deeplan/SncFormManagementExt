@@ -1,29 +1,39 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
-
   "id": "1366dfba-b699-4e34-a3dd-50df42da8df0",
   "alias": "SncFormManagementExtCommandSet",
   "componentType": "Extension",
   "extensionType": "ListViewCommandSet",
-
-  // The "*" signifies that the version should be taken from the package.json
   "version": "*",
   "manifestVersion": 2,
-
-  // If true, the component can only be installed on sites where Custom Script is allowed.
-  // Components that allow authors to embed arbitrary script code should set this to true.
-  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
   "requiresCustomScript": false,
-
   "items": {
-    "COMMAND_1": {
-      "title": { "default": "Command One" },
-      "iconImageUrl": "icons/request.png",
+    "New_BusinessTravel_Field": {
+      "title": {
+        "default": "New"
+      },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADhSURBVHgB7ZQxDoJAEEX/oGjrDeQGUlLiUTiBNNZKbcMNPIqUlHoDjmBrTBxnIUYgEQYNlfuTzWaT+XmbmcwnaBXEHuAeAQoBzoB7hDwtNFYHas13FcBIbnJjrXMA5OE1nowVlBoA+V4WYiHjicpNptkGzH5nJZMv1Yua8yqec6cHTgHckmkZFYzQuHq+04Ia4CsBPv5Mjus5/YW/ikKnCrsxxZm0axJJLu3lseyubc2EZSbUMxPCBTxJewZRU7A9NVsrHcgPa43VLqOF/A3ELFbTWkApPUQ29x1B5qZEa30Cy+A0ya0GitsAAAAASUVORK5CYII=",
       "type": "command"
     },
-    "COMMAND_2": {
-      "title": { "default": "Command Two" },
-      "iconImageUrl": "icons/cancel.png",
+    "Edit_BusinessTravel_Field": {
+      "title": {
+        "default": "Edit form"
+      },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGlSURBVHgBtZZfTsJAEMa/aSuJ8YUjcAR8MOAbnkA8AXADTJT4pryZYILeAE9gb0DfhPgAR+AG1gf/JErH2S0xQGjZbfFL2p22m/l1djczQ9ilqhc1gK7lkhEzgLsY9QakP9baRbzvleBy0djh6C5YBXQach9omzEFoaxtwjmh2i4BhaE8lmCjOR/ipTddATBCRHyi31evSuBoIpDQAxeexJAX8EEcGgEIbzj4niUCdKS3M1Q6ak7Zi8PiAOPeGWyVBFA6uixr37J0DrJqG8ChobYddD1kkQmAIIeIW3ju+faR2ADk+MbB/DPADpIRYA7JATCD5AQoeTsFqPT06TWx/zNAcB+aRnJjFcGHWwM5fXzt1ZedJEN0RpV0Q+QbL5HjbEywKZG4jXicPxoBUpSyJ1yDqgkqpauoyDlFhKYtIBnyt1SyH5XOq9hF2Rul0BaQDCGqa6es/locEz+A2cd4rVDlgiiHtBgzOt4OiUtrgB0pez2xhjCZNxBp4s2NiKdLL0kLc9yZyCSzGp8IobhDgRusQdwWKOrLSaoDhJxaHHFpIpb0CzQqCQKG7YKsAAAAAElFTkSuQmCC",
+      "type": "command"
+    },
+    "New_MeetingRoom_Field": {
+      "title": {
+        "default": "New"
+      },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADhSURBVHgB7ZQxDoJAEEX/oGjrDeQGUlLiUTiBNNZKbcMNPIqUlHoDjmBrTBxnIUYgEQYNlfuTzWaT+XmbmcwnaBXEHuAeAQoBzoB7hDwtNFYHas13FcBIbnJjrXMA5OE1nowVlBoA+V4WYiHjicpNptkGzH5nJZMv1Yua8yqec6cHTgHckmkZFYzQuHq+04Ia4CsBPv5Mjus5/YW/ikKnCrsxxZm0axJJLu3lseyubc2EZSbUMxPCBTxJewZRU7A9NVsrHcgPa43VLqOF/A3ELFbTWkApPUQ29x1B5qZEa30Cy+A0ya0GitsAAAAASUVORK5CYII=",
+      "type": "command"
+    },
+    "Edit_MeetingRoom_Field": {
+      "title": {
+        "default": "Edit form"
+      },
+      "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGlSURBVHgBtZZfTsJAEMa/aSuJ8YUjcAR8MOAbnkA8AXADTJT4pryZYILeAE9gb0DfhPgAR+AG1gf/JErH2S0xQGjZbfFL2p22m/l1djczQ9ilqhc1gK7lkhEzgLsY9QakP9baRbzvleBy0djh6C5YBXQach9omzEFoaxtwjmh2i4BhaE8lmCjOR/ipTddATBCRHyi31evSuBoIpDQAxeexJAX8EEcGgEIbzj4niUCdKS3M1Q6ak7Zi8PiAOPeGWyVBFA6uixr37J0DrJqG8ChobYddD1kkQmAIIeIW3ju+faR2ADk+MbB/DPADpIRYA7JATCD5AQoeTsFqPT06TWx/zNAcB+aRnJjFcGHWwM5fXzt1ZedJEN0RpV0Q+QbL5HjbEywKZG4jXicPxoBUpSyJ1yDqgkqpauoyDlFhKYtIBnyt1SyH5XOq9hF2Rul0BaQDCGqa6es/locEz+A2cd4rVDlgiiHtBgzOt4OiUtrgB0pez2xhjCZNxBp4s2NiKdLL0kLc9yZyCSzGp8IobhDgRusQdwWKOrLSaoDhJxaHHFpIpb0CzQqCQKG7YKsAAAAAElFTkSuQmCC",
       "type": "command"
     }
   }

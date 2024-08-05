@@ -1,0 +1,15 @@
+div.ms-OverflowSet div.ms-OverflowSet-item:first-child button[name="New"] {
+  display: none;
+}
+
+div.ms-OverflowSet>div.ms-OverflowSet-item:nth-child(2)>button[name="Edit"] {
+  display: none;
+}
+
+div.ms-OverflowSet div.ms-OverflowSet-item:first-child button[name="חדש"] {
+  display: none;
+}
+
+div.ms-OverflowSet>div.ms-OverflowSet-item:nth-child(2)>button[name="ערוך"] {
+  display: none;
+}
