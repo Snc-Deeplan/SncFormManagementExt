@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.17.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "snc-form-management-ext",
+    "libraryId": "de75aee7-f740-412d-b18f-ee75a6beb0df",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "snc-form-management-ext",
+    "solutionShortDescription": "snc-form-management-ext description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}

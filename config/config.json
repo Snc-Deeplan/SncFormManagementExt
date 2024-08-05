@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "snc-form-management-ext-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/sncFormManagementExt/SncFormManagementExtCommandSet.js",
+          "manifest": "./src/extensions/sncFormManagementExt/SncFormManagementExtCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SncFormManagementExtCommandSetStrings": "lib/extensions/sncFormManagementExt/loc/{locale}.js"
+  }
+}
