@@ -33,7 +33,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
   }
 
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
-    //* Create and Update Vacation Request
+    //* Create and Update Business Travel Request
     const BusinessTravelCompareOneCommand: Command = this.tryGetCommand(
       "New_BusinessTravel_Field"
     );
@@ -41,7 +41,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
       "Edit_BusinessTravel_Field"
     );
 
-    //* Create and Update ITCalls Request
+    //* Create and Update Meeting Room Request
     const MeetingRoomCompareOneCommand: Command = this.tryGetCommand(
       "New_MeetingRoom_Field"
     );
