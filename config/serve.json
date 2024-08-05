@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "pageUrl": "https://startupnation.sharepoint.com/sites/StartupNationCentral/Lists/MeetingRoomRequest/AllItems.aspx",
       "customActions": {
         "1366dfba-b699-4e34-a3dd-50df42da8df0": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -16,7 +16,7 @@
       }
     },
     "sncFormManagementExt": {
-      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "pageUrl": "https://startupnation.sharepoint.com/sites/StartupNationCentral/Lists/MeetingRoomRequest/AllItems.aspx",
       "customActions": {
         "1366dfba-b699-4e34-a3dd-50df42da8df0": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",

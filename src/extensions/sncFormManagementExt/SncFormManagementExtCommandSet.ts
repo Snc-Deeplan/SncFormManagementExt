@@ -27,12 +27,16 @@ const LOG_SOURCE: string = 'SncFormManagementExtCommandSet';
 
 export default class SncFormManagementExtCommandSet extends BaseListViewCommandSet<ISncFormManagementExtCommandSetProperties> {
 
+  @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized SncFormManagementExtCommandSet');
+    console.log("hey ext");
+
     return Promise.resolve();
   }
 
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
+
     //* Create and Update Business Travel Request
     const BusinessTravelCompareOneCommand: Command = this.tryGetCommand(
       "New_BusinessTravel_Field"
@@ -51,10 +55,10 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
 
     //* Get current library name from pageContext
     let LibraryName = this.context.pageContext.list?.title;
+    console.log("LibraryName:", LibraryName)
 
     //* Check if current library name is in Constants.BUSINESS_TRAVEL_LIBRARY_NAME
     if (Constants.BUSINESS_TRAVEL_LIBRARY_NAME.indexOf(LibraryName || "") !== -1) {
-      BusinessTravelCompareOneCommand.visible = true;
       if (BusinessTravelSecondCommand) {
         BusinessTravelSecondCommand.visible = event.selectedRows?.length === 1;
       }
@@ -81,6 +85,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     const webUri = this.context.pageContext.web.absoluteUrl;
+    console.log("webUri:", webUri)
 
     switch (event.itemId) {
       //* Create and Update BusinessTravel Request
