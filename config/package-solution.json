@@ -3,7 +3,7 @@
   "solution": {
     "name": "snc-form-management-ext-client-side-solution",
     "id": "de75aee7-f740-412d-b18f-ee75a6beb0df",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
