@@ -1,7 +1,6 @@
 import { Log } from '@microsoft/sp-core-library';
 import {
   BaseListViewCommandSet,
-  IListViewCommandSetListViewUpdatedParameters,
   type Command,
   type IListViewCommandSetExecuteEventParameters,
   // type ListViewStateChangedEventArgs
@@ -30,12 +29,12 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized SncFormManagementExtCommandSet');
-    console.log("hey ext");
+    this.context.listView.listViewStateChangedEvent.add(this, this.onListViewUpdated);
 
     return Promise.resolve();
   }
 
-  public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
+  public onListViewUpdated(): void {
 
     //* Create and Update Business Travel Request
     const BusinessTravelCompareOneCommand: Command = this.tryGetCommand(
@@ -60,7 +59,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
     //* Check if current library name is in Constants.BUSINESS_TRAVEL_LIBRARY_NAME
     if (Constants.BUSINESS_TRAVEL_LIBRARY_NAME.indexOf(LibraryName || "") !== -1) {
       if (BusinessTravelSecondCommand) {
-        BusinessTravelSecondCommand.visible = event.selectedRows?.length === 1;
+        BusinessTravelSecondCommand.visible = this.context.listView.selectedRows?.length === 1;
       }
       require("./ExtStyle/ExtStyle.css");
     } else {
@@ -72,7 +71,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
     if (Constants.MEETING_ROOM_LIBRARY_NAME.indexOf(LibraryName || "") !== -1) {
       MeetingRoomCompareOneCommand.visible = true;
       if (MeetingRoomCompareSecondCommand) {
-        MeetingRoomCompareSecondCommand.visible = event.selectedRows?.length === 1;
+        MeetingRoomCompareSecondCommand.visible = this.context.listView.selectedRows?.length === 1;
       }
       require("./ExtStyle/ExtStyle.css");
     } else {
@@ -93,7 +92,8 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
         window.location.href = webUri + Constants.newBusinessTravelRequest;
         break;
       case "Edit_BusinessTravel_Field":
-        var ItemID = event.selectedRows[0].getValueByName("ID").toString();
+        if (!this.context.listView.selectedRows?.length) return
+        var ItemID = this.context.listView.selectedRows[0].getValueByName("ID").toString();
         window.location.href =
           webUri + Constants.editBusinessTravelRequest + "?FormID=" + ItemID;
         break;
@@ -103,7 +103,8 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
         window.location.href = webUri + Constants.newMeetingRoomRequest;
         break;
       case "Edit_MeetingRoom_Field":
-        var ItemID = event.selectedRows[0].getValueByName("ID").toString();
+        if (!this.context.listView.selectedRows?.length) return
+        var ItemID = this.context.listView.selectedRows[0].getValueByName("ID").toString();
         window.location.href =
           webUri + Constants.editMeetingRoomRequest + "?FormID=" + ItemID;
         break;
