@@ -7,6 +7,7 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 import { override } from "@microsoft/decorators";
 import { Constants } from "./Models/Constants";
+import './ExtStyle/GlobalStyle.css'
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -34,6 +35,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
     return Promise.resolve();
   }
 
+  @override
   public onListViewUpdated(): void {
 
     //* Create and Update Business Travel Request
@@ -58,6 +60,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
 
     //* Check if current library name is in Constants.BUSINESS_TRAVEL_LIBRARY_NAME
     if (Constants.BUSINESS_TRAVEL_LIBRARY_NAME.indexOf(LibraryName || "") !== -1) {
+      BusinessTravelCompareOneCommand.visible = true
       if (BusinessTravelSecondCommand) {
         BusinessTravelSecondCommand.visible = this.context.listView.selectedRows?.length === 1;
       }
@@ -78,7 +81,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
       MeetingRoomCompareOneCommand.visible = false;
       MeetingRoomCompareSecondCommand.visible = false;
     }
-
+    this.raiseOnChange();
   }
 
   @override

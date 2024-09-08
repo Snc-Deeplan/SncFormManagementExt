@@ -1,0 +1,7 @@
+button[data-automationid="newCommand"] {
+  display: none !important;
+}
+
+button[data-automationid="editCommand"] {
+  display: none !important;
+}
