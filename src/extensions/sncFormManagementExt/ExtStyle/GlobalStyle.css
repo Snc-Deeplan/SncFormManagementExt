@@ -1,12 +1,12 @@
-button[data-automationid="newCommand"] {
+/* button[data-automationid="newCommand"] {
   display: none !important;
 }
 
 button[data-automationid="editCommand"] {
   display: none !important;
-}
+} */
 
-div.ms-OverflowSet div.ms-OverflowSet-item:first-child button[name="New"] {
+/* div.ms-OverflowSet div.ms-OverflowSet-item:first-child button[name="New"] {
   display: none;
 }
 
@@ -20,4 +20,4 @@ div.ms-OverflowSet div.ms-OverflowSet-item:first-child button[name="חדש"] {
 
 div.ms-OverflowSet>div.ms-OverflowSet-item:nth-child(2)>button[name="ערוך"] {
   display: none;
-}
+} */
