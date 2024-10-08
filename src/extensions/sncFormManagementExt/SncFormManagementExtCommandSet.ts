@@ -55,11 +55,11 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
     );
 
     //* Get current library name from pageContext
-    let LibraryName = this.context.pageContext.list?.title;
+    let LibraryName = this.context.pageContext.list?.title as string;
     console.log("LibraryName:", LibraryName)
 
     //* Check if current library name is in Constants.BUSINESS_TRAVEL_LIBRARY_NAME
-    if (Constants.BUSINESS_TRAVEL_LIBRARY_NAME.indexOf(LibraryName || "") !== -1) {
+    if (Constants.BUSINESS_TRAVEL_LIBRARY_NAME.indexOf(LibraryName) !== -1) {
       BusinessTravelCompareOneCommand.visible = true
       if (BusinessTravelSecondCommand) {
         BusinessTravelSecondCommand.visible = this.context.listView.selectedRows?.length === 1;
@@ -71,7 +71,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
     }
 
     //* Check if current library name is in Constants.MEETING_ROOM_LIBRARY_NAME
-    if (Constants.MEETING_ROOM_LIBRARY_NAME.indexOf(LibraryName || "") !== -1) {
+    if (Constants.MEETING_ROOM_LIBRARY_NAME.indexOf(LibraryName) !== -1) {
       MeetingRoomCompareOneCommand.visible = true;
       if (MeetingRoomCompareSecondCommand) {
         MeetingRoomCompareSecondCommand.visible = this.context.listView.selectedRows?.length === 1;
