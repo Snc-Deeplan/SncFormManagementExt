@@ -56,7 +56,7 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
 
     //* Get current library name from pageContext
     let LibraryName = this.context.pageContext.list?.title as string;
-    console.log("LibraryName:", LibraryName)
+    // console.log("LibraryName:", LibraryName)
 
     //* Check if current library name is in Constants.BUSINESS_TRAVEL_LIBRARY_NAME
     if (Constants.BUSINESS_TRAVEL_LIBRARY_NAME.indexOf(LibraryName) !== -1) {
@@ -74,7 +74,10 @@ export default class SncFormManagementExtCommandSet extends BaseListViewCommandS
     if (Constants.MEETING_ROOM_LIBRARY_NAME.indexOf(LibraryName) !== -1) {
       MeetingRoomCompareOneCommand.visible = true;
       if (MeetingRoomCompareSecondCommand) {
-        MeetingRoomCompareSecondCommand.visible = this.context.listView.selectedRows?.length === 1;
+        if (this.context.listView.selectedRows) {
+          MeetingRoomCompareSecondCommand.visible = this.context.listView.selectedRows?.length === 1 &&
+            this.context.listView.selectedRows[0].getValueByName('EventLink') !== ''
+        }
       }
       require("./ExtStyle/ExtStyle.css");
     } else {
